@@ -1,0 +1,16 @@
+#Maven
+/target
+
+# Java
+*.class
+/.classpath
+/.project
+
+# Eclipse
+/.settings/org.eclipse.buildship.core.prefs
+/.settings/org.eclipse.jdt.core.prefs
+/bin/de
+/.gradle/
+*.eclipse.m2e.core.prefs
+
+*.idea
