@@ -179,43 +179,4 @@ public final class GraphTranslator {
             }
         }
     }
-
-    public void writeClusters(List<List<Integer>> clusters, int k) {
-        FileWriter fileWriter = null;
-        BufferedWriter bufferedWriter = null;
-
-        String s = network.getRow(network).get(CyNetwork.NAME, String.class);
-
-        s = s.substring(0, s.indexOf("."));
-
-        if (k < 0) {
-            s = s + "yoshikoClustering";
-        } else {
-            s = s+ "k-Clustering";
-        }
-
-        try {
-            File file = new File("C:\\Users\\User\\Desktop\\relevantClustEval\\optimalThreshold\\"+s);
-            file.createNewFile();
-            fileWriter = new FileWriter(file);
-            bufferedWriter = new BufferedWriter(fileWriter);
-            for (int i = 0; i < clusters.size(); i++) {
-                List<Integer> cluster = clusters.get(i);
-                for (Integer nodeId : cluster) {
-                    bufferedWriter.write(network.getRow(nodeMap.get(nodeId)).get(CyNetwork.NAME, String.class) + " " + i + "\n");
-                }
-            }
-            bufferedWriter.close();
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bufferedWriter.close();
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }

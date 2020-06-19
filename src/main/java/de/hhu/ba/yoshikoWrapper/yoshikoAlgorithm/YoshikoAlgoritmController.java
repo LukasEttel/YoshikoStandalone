@@ -43,7 +43,6 @@ public class YoshikoAlgoritmController {
         result.addSolution(solution);
 
         taskMonitor.setStatusMessage("Processing Clusters");
-        translator.writeClusters(clusters, k);
         translator.transateClusters(clusters, solution);
     }
 }
